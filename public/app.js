@@ -9,7 +9,8 @@ app.set('view engine', 'hbs');
 app.engine( 'hbs', engine({
     layoutsDir: `${__dirname}/views/layouts`,
     extname: 'hbs',
-    defaultLayout: 'index'
+    defaultLayout: 'index',
+    partialsDir: `${__dirname}/views/layouts`
 }));
 
 app.use(express.static('public'));
