@@ -3,19 +3,17 @@ const app = express();
 const PORT = process.env.PORT || 3000
 const path = require('path')
 
-const { engine } = require('express-handlebars');
-
-
-app.set('view engine', 'hbs');
-
-app.engine( 'hbs', engine({
-    layoutsDir: `${__dirname}/views/layouts`,
-    extname: 'hbs',
+const handlebars = require('express-handlebars').create({
+    layoutsDir: path.join(__dirname, "views/layouts"),
+    partialsDir: path.join(__dirname, "views/partials"),
     defaultLayout: 'index',
-    partialsDir: `${__dirname}/views/layouts`
-}));
+    extname: 'hbs'
+  });
+  
 
-app.use(express.static('public'));
+app.engine('hbs', handlebars.engine);
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, "views"));
 
 app.get('/', (req, res)=> {
     res.render('main');
