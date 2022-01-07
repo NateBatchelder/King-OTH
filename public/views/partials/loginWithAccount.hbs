@@ -1,0 +1,34 @@
+<div id="hideBox">
+            <div id="highBox">
+				<div id="logoBox">
+					<img src="assets/img/logo.png"/>
+				</div>
+                <center>
+                	<form method="post" onsubmit="return checkDataToSend(this);" action="autentication.php">
+                        <input type="text"
+                               name="usrname"
+                               id="usrname"
+                               class="textbox"
+                               value="Username"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               onfocus="removeDefault(usrname)"
+                               onblur="setDefault(usrname)"/><br><br>
+                        <input type="password"
+                               name="password"
+                               id="password"
+                               class="textbox"
+                               value="Password"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               onfocus="removeDefault(password)"
+                               onblur="setDefault(password)"/><br><br>
+                        <input type="hidden" 
+                        	   name="md5password"/>
+                        <input type="submit" 
+                               name="btn" 
+                               value="Login" 
+                               class="submitbutton"/>
+                	</form>
+                </center>
+            </div>
