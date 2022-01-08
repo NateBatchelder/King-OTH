@@ -1,25 +1,21 @@
- <div class="signup_box">
-
- 	<h3>SIGNUP</h3>
-
- 	<form name="signupform" onsubmit="return form2()">
-
- 	<p>User Name</p>
- 	<input type="text" name="signup_username" placeholder="Enter Username">
-
- 	<p>Email</p>
- 	<input type="email" name="signup_useremail" placeholder="Enter Email id">
-
- 	<p>Password</p>
- 	<input type="password" name="signup_pwd" placeholder="password">
-
- 	<p>Retype Password</p>
- 	<input type="password" name="repwd" placeholder="Re-Enter pasword"><br>
- 	<div id="errorbox"></div><br>
-
-
- 	<input type="submit" name="" value="SIGNUP"><br><br>
- 	
- 	<a href="main">Existing user, Login </a>
- </form>
- </div>
+<div class="container row">
+            <div class="jumbotron col-sm-4 pull-center">
+                <form action="/loginNoAccount" method="post">
+                    <div>
+                        <label>Username:</label>
+                        <input type="text" name="username"/>
+                    </div>
+                    <div>
+                        <label>Email:----></label>
+                        <input type="text" name="email"/>
+                    </div>    
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" name="password"/>
+                    </div>
+                    <div>
+                        <input class="btn btn-primary" type="submit" value="Sign Up"/>
+                    </div>
+                </form>                  
+            </div>          
+        </div>
