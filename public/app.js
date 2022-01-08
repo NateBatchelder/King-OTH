@@ -19,7 +19,7 @@ app.get('/', (req, res)=> {
     res.render('main', {layout: 'index'});
 });
 // LoginNoAccount Page Route 
-app.get('main', (req, res)=> {
+app.get('/', (req, res)=> {
     res.render('signup', {layout: 'index'});
 });
 
