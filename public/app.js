@@ -16,8 +16,13 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, "views"));
 
 app.get('/', (req, res)=> {
-    res.render('main');
+    res.render('main', {layout: 'index'});
 });
+// LoginNoAccount Page Route 
+app.get('/', (req, res)=> {
+    res.render('signup', {layout: 'index'});
+});
+
 
 app.listen(PORT,
     console.log(`App listening to port ${PORT}`)
