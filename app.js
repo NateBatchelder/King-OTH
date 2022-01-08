@@ -1,7 +1,15 @@
 const express = require('express');
-const app = express();
 const PORT = process.env.PORT || 3000
 const path = require('path')
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/King-OTH')
+let db = mongoose.connection;
+db.once('open',function(){
+    console.log('connected to mongo bro bro')
+})
+
+const app = express();
+
 const handlebars = require('express-handlebars').create({
     layoutsDir: path.join(__dirname, "views/layouts"),
     partialsDir: path.join(__dirname, "views/partials"),
