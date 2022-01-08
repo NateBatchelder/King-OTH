@@ -11,7 +11,7 @@
   "dependencies": {
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
-    "mongoose": "^6.1.5",
+    "mongoose": "^5.3.16",
     "node": "^17.3.0",
     "path": "^0.12.7"
   }
