@@ -50,4 +50,4 @@ app.post('/views/api/users', (req, res) => {
 //     console.log('connected to mongo bro bro')
 // })
 app.listen(PORT,
-    console.log(`App listening to port ${PORT}`)
+    console.log(`App listening to port ${PORT}`))
