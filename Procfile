@@ -1,1 +1,2 @@
-web: node app.js
+web: mongod
+node app.js
