@@ -1,7 +1,7 @@
-const User = require('./models/User.js')
+const User = require('./models/User.js');
 const express = require('express');
-const PORT = process.env.PORT || 3000
-const path = require('path')
+const PORT = process.env.PORT || 3000;
+const path = require('path');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/King-OTH', {
