@@ -43,9 +43,11 @@ app.post('/views/api/users', (req, res) => {
     // res.json({ message: 'First User' })
 })
 
-db.once('open', function () {
-    app.listen(PORT,
-        console.log(`App listening to port ${PORT}`)
-    );
-    console.log('connected to mongo bro bro')
-})
+// db.once('open', function () {
+//     app.listen(PORT,
+//         console.log(`App listening to port ${PORT}`)
+//     );
+//     console.log('connected to mongo bro bro')
+// })
+app.listen(PORT,
+    console.log(`App listening to port ${PORT}`)
