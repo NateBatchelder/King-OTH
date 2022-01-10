@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const { User } = require('../models/user');
+const { User } = require('/models/User');
 
 // Register Form
-router.get('/register', async (req, res) => {
-  res.render('register');
+router.get('/loginNoAccount', async (req, res) => {
+  res.render('/signup');
 });
 
 // Register Proccess
-router.post('/register', async (req, res) => {
+router.post('/User', async (req, res) => {
 
   const name = req.body.name;
   const email = req.body.email;

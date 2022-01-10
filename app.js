@@ -2,14 +2,14 @@ const User = require('./models/User.js');
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const path = require('path');
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost/King-OTH', {
-//     useFindAndModify: false,
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// })
-// let db = mongoose.connection;
+mongoose.connect('mongodb://localhost/King-OTH', {
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+let db = mongoose.connection;
 
 const app = express();
 app.use(express.json());
@@ -43,11 +43,9 @@ app.post('/views/api/users', (req, res) => {
     // res.json({ message: 'First User' })
 })
 
-// db.once('open', function () {
-//     app.listen(PORT,
-//         console.log(`App listening to port ${PORT}`)
-//     );
-//     console.log('connected to mongo bro bro')
-// })
-app.listen(PORT,
-    console.log(`App listening to port ${PORT}`))
+db.once('open', function () {
+    app.listen(PORT,
+        console.log(`App listening to port ${PORT}`)
+    );
+    console.log('connected to mongo bro bro')
+})

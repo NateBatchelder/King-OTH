@@ -1,6 +1,6 @@
 <div class="container row">
             <div class="jumbotron col-sm-4 pull-center">
-                <form action="/loginNoAccount" method="post">
+                <form action="/" >
                     <div>
                         <label>Username:</label>
                         <input type="text" name="username"/>
@@ -14,7 +14,11 @@
                         <input type="password" name="password"/>
                     </div>
                     <div>
-                        <input class="btn btn-primary" type="submit" value="Sign Up"/>
+                        <label>Re-type Password:</label>
+                        <input type="password" name="password2"/>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" id="UserInfo" type="submit" value="Sign Up" />
                     </div>
                 </form>                  
             </div>          
