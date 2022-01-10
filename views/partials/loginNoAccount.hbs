@@ -1,25 +1,63 @@
 <div class="container row">
             <div class="jumbotron col-sm-4 pull-center">
-                <form action="/" >
+                <form id="signUpForm" >
                     <div>
                         <label>Username:</label>
-                        <input type="text" name="username"/>
+                        <input type="text"  id= "username" name="username"/>
                     </div>
                     <div>
                         <label>Email:----></label>
-                        <input type="text" name="email"/>
+                        <input type="text" id="email" name="email"/>
                     </div>    
                     <div>
                         <label>Password:</label>
-                        <input type="password" name="password"/>
+                        <input type="password" id="password" name="password"/>
                     </div>
                     <div>
                         <label>Re-type Password:</label>
-                        <input type="password" name="password2"/>
+                        <input type="password" id="password2" name="password2"/>
                     </div>
                     <div>
-                        <button class="btn btn-primary" id="UserInfo" type="submit" value="Sign Up" />
+                        <button class="btn btn-primary" id="userInfo" type="submit" value="Sign Up" />
                     </div>
                 </form>                  
             </div>          
         </div>
+        <script>async function handleUserInfo(event){
+    event.preventDefault();
+    
+    const username= document.querySelector('#username').value.trim();
+    const email= document.querySelector('#username').value.trim();
+    const password= document.querySelector('#password').value.trim();
+    const password2= document.querySelector('#password2').value.trim();
+    
+    if (username && email && password && password2) {
+        if (password !== password2) alert("Please enter your password correctly")
+        else {
+            const response = await fetch('/routes/users',{
+                method:'POST',
+                body: JSON.stringify({
+                    username,
+                    email,
+                    password
+                }),
+                                headers:{
+                    "Content-Type":"application/json"
+                }
+            })
+            if (response.ok) {
+                document.location.replace('/')
+            }else {
+                    alert(response.statusText);
+                }
+            }
+            
+        }
+    
+    }
+    
+    
+    
+    document.querySelector('#signUpForm').addEventListener('submit', handleUserInfo);
+    
+     </script>

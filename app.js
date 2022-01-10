@@ -1,4 +1,4 @@
-const User = require('./models/User.js');
+const { User }= require('./models/User');
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const path = require('path');
@@ -24,24 +24,14 @@ const handlebars = require('express-handlebars').create({
 
 app.engine('hbs', handlebars.engine);
 app.set('view engine', 'hbs');
+app.use(express.json());
+app.use(express.urlencoded({
+    extended:false
+}));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-    res.render('index', { layout: 'main' });
-});
-app.get('/views/signup', (req, res) => {
-    res.render('signup', { layout: 'main' });
-});
+app.use(require('./routes/users.js'))
 
-app.post('/views/api/users', (req, res) => {
-    const body = req.body
-    const user = new User(body)
-    console.log(body)
-    User.create(user)
-    .then(dbUser => res.json(dbUser))
-    .catch(err => res.status(400).json(err));
-
-    // res.json({ message: 'First User' })
-})
 
 db.once('open', function () {
     app.listen(PORT,
