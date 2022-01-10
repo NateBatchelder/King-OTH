@@ -71,10 +71,10 @@ router.get('/views/signup', (req, res) => {
     res.render('signup', { layout: 'main' });
 });
 router.get('/views/signedInHome', (req, res) => {
-    res.render('signedInHome', { layout: 'main' });
+    res.render('signedInHome', { layout: 'signedInMain' });
 });
 router.post('/views/signedInHome', (req, res) => {
-    res.render('signedInHome', { layout: 'main' });
+    res.render('signedInHome', { layout: 'signedInMain' });
 });
 router.post('/routes/users', (req, res) => {
     const body = req.body
